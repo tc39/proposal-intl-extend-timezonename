@@ -37,6 +37,63 @@ Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/
 | id | VV	| America/Los_Angeles |  |
 
 Note: Frank would like not to support locode nor id.
+
+### Output from V8 prototype
+```
+$ out/x64.release/d8 --harmony_intl_more_timezone
+V8 version 8.7.0 (candidate)
+d8> let timeZoneNames = ["short", "long", "offset", "longOffset", "shortWall", "longWall", "locode", "id", "location", "longLocation"];
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("en", {timeZoneName}))});
+5:39:14 PM PDT
+5:39:14 PM Pacific Daylight Time
+5:39:14 PM -0700
+5:39:14 PM GMT-07:00
+5:39:14 PM PT
+5:39:14 PM Pacific Time
+5:39:14 PM uslax
+5:39:14 PM America/Los_Angeles
+5:39:14 PM Los Angeles
+5:39:14 PM Los Angeles Time
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("zh-Hant", {timeZoneName}))});
+下午5:39:40 [PDT]
+下午5:39:40 [太平洋夏令時間]
+下午5:39:40 [-0700]
+下午5:39:40 [GMT-07:00]
+下午5:39:40 [PT]
+下午5:39:40 [太平洋時間]
+下午5:39:40 [uslax]
+下午5:39:40 [America/Los_Angeles]
+下午5:39:40 [Los Angeles]
+下午5:39:40 [Los Angeles時間]
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("fr", {timeZoneName}))});
+17:40:55 UTC−7
+17:40:55 heure d’été du Pacifique
+17:40:55 -0700
+17:40:55 UTC−07:00
+17:40:55 heure : Los Angeles
+17:40:55 heure du Pacifique nord-américain
+17:40:55 uslax
+17:40:55 America/Los_Angeles
+17:40:55 Los Angeles
+17:40:55 heure : Los Angeles
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("ko", {timeZoneName}))});
+오후 5시 41분 31초 GMT-7
+오후 5시 41분 31초 북미 태평양 하계 표준시
+오후 5시 41분 31초 -0700
+오후 5:41:31 GMT-07:00
+오후 5:41:31 Los Angeles 시간
+오후 5:41:31 북미 태평양 시간
+오후 5시 41분 31초 uslax
+오후 5:41:31 America/Los_Angeles
+오후 5:41:31 Los Angeles
+오후 5:41:31 Los Angeles 시간
+undefined
+```
+v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328
  
 ## To be deleted ...
   3.  ["How to write a good explainer"][explainer] explains how to make a good first impression.
