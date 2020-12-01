@@ -33,10 +33,8 @@ Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/
 | longWall | vvvv | Pacific Time |  |
 | location | VVV |	Los Angeles |  |
 | longLocation | VVVV | Los Angeles TIme |  |
-| locode | V | uslax |  |
-| id | VV	| America/Los_Angeles |  |
-
-Note: Frank would like not to support locode nor id.
+| locode | V | uslax |  Frank oppose to support this|
+| id | VV	| America/Los_Angeles | Frank oppose to support this |
 
 ### Output from V8 prototype
 ```
