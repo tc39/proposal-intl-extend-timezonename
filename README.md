@@ -25,8 +25,8 @@ Prior Discussion: [DateTimeFormat: consider adding more timezone display options
 Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
 | timeZoneName | CLDR pattern | Examples | Note |
 | --- | --- |--- | --- |
-| short | z | -0800  | Already supported by ECMA402 |
-| long | zzzz | -0800  | Already supported by ECMA402 |
+| short | z | PST  | Supported by ECMA402 already |
+| long | zzzz | Pacific Standard Time  | Supported by ECMA402 already |
 | offset | Z | -0800  |   |
 | longOffset  | ZZZZ | GMT-0800 |  |
 | shortWall  | v | PT |  |
