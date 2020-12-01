@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: Proposal Title Goes Here
-stage: -1
-contributors: Your Name(s) Here
+title: Extend TimeZoneName Option Proposal
+stage: 0
+location: https://tc39.github.io/proposal-intl-extend-timezonename
+copyright: true
+contributors: Google, Ecma International
 </pre>
 
 <emu-clause id="sec-demo-clause">
@@ -21,3 +23,5 @@ contributors: Your Name(s) Here
     1. Return ? ToString(_proposal_).
   </emu-alg>
 </emu-clause>
+<emu-biblio href="./biblio.json"></emu-biblio>
+<emu-import href="./datetimeformat.html"></emu-import>
