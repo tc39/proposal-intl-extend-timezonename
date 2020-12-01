@@ -18,8 +18,9 @@ Stage 0
   Extend the timeZoneName option in Intl.DateTimeFormat object to support more formatted options.
   
 ## Background
-Prior Discussion: [DateTimeFormat: consider adding more timezone display options](https://github.com/tc39/ecma402/issues/119)
+Prior Discussion: [ECMA402#119 DateTimeFormat: consider adding more timezone display options](https://github.com/tc39/ecma402/issues/119)
  
+Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names)
 ## 
 
 Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
