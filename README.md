@@ -1,4 +1,4 @@
-# Extend TimeZone Option Proposal
+# Extend TimeZoneName Option Proposal
 
 <!--
  
@@ -15,7 +15,7 @@ Stage 0
 * Frank Tang @FrankYFTang
 
 ## Scope
-  Extend the timeZone option in Intl.DateTimeFormat object to support more formatted options.
+  Extend the timeZoneName option in Intl.DateTimeFormat object to support more formatted options.
   
 ## Background
 [DateTimeFormat: consider adding more timezone display options](https://github.com/tc39/ecma402/issues/119)
