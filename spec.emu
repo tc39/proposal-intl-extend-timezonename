@@ -6,22 +6,16 @@
 <pre class="metadata">
 title: Extend TimeZoneName Option Proposal
 stage: 0
-location: https://tc39.github.io/proposal-intl-extend-timezonename
+location: https://frankyftang.github.io/proposal-intl-extend-timezonename/
 copyright: true
 contributors: Google, Ecma International
 </pre>
 
-<emu-clause id="sec-demo-clause">
-  <h1>This is an emu-clause</h1>
-  <p>This is an algorithm:</p>
-  <emu-alg>
-    1. Let _proposal_ be *undefined*.
-    1. If IsAccepted(_proposal_),
-      1. Let _stage_ be *0*.
-    1. Else,
-      1. Let _stage_ be *-1*.
-    1. Return ? ToString(_proposal_).
-  </emu-alg>
-</emu-clause>
+<emu-intro id="sec-intro">
+  <h1>Introduction</h1>
+
+  <p>This proposal adds several valid values for the `timeZoneName` option to `Intl.DateTimeFormat`. These values of `timeZoneName` empower web developers to format time with additional common used timezone representations. See <a href="https://github.com/FrankYFTang/proposal-intl-extend-timezonename/blob/master/README.md">the README</a> for more context.</p>
+</emu-intro>
+
 <emu-biblio href="./biblio.json"></emu-biblio>
 <emu-import href="./datetimeformat.html"></emu-import>
