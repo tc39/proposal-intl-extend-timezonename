@@ -11,5 +11,18 @@
       "refId": "sec-ecmascript-language-types-string-type",
       "key": "string-concatenation"
     }
+  ],
+  "https://tc39.es/ecma402/": [
+    {
+      "type": "term",
+      "term": "legacy-constructor",
+      "refId": "sec-constructor-properties-of-the-intl-object",
+      "id": "legacy-constructor"
+    },
+    {
+      "type": "clause",
+      "number": "9.1",
+      "id": "sec-internal-slots"
+    }
   ]
 }
