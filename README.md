@@ -25,12 +25,12 @@ Prior Discussion: [ECMA402#119 DateTimeFormat: consider adding more timezone dis
  
 Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names)
 ##  Updated Proposal - add 4 new formats only
-| timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key | Total # of items in 476 locales| Total bytes in UTF8 |
-| --- | --- |--- | --- | --- | --- | --- |
-| shortGMT | O | GMT-8  | The short localized GMT format. | zone/\*/zoneStrings/gmt\.\*Format | 263 | 1826 |
-| longGMT  | OOOO | GMT-0800 | The long localized GMT format. | (same as above) | (no extra from above) | (no extra from above) |
-| shortWall  | v | PT | The short generic non-location format. | zone/\*/zoneStrings/meta:\*/sg | 332  | 1719  |
-| longWall | vvvv | Pacific Time | The long generic non-location format. | zone/\*/zoneStrings/meta:\*/lg | 10047 | 278103 | 
+| timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key | Total # of items in 476 locales| Total bytes in UTF8 | Compressed Size |
+| --- | --- |--- | --- | --- | --- | --- | --- |
+| shortGMT | O | GMT-8  | The short localized GMT format. | zone/\*/zoneStrings/gmt\.\*Format | 263 | 1826 | 392 |
+| longGMT  | OOOO | GMT-0800 | The long localized GMT format. | (same as above) | (no extra from above) | (no extra from above) | (no extra from above) |
+| shortWall  | v | PT | The short generic non-location format. | zone/\*/zoneStrings/meta:\*/sg | 332  | 1719  |  311 | 
+| longWall | vvvv | Pacific Time | The long generic non-location format. | zone/\*/zoneStrings/meta:\*/lg | 10047 | 278103 | 69526 |
 
 Note:
 Here is how I get the above number
@@ -39,10 +39,16 @@ Here is how I get the above number
 $ cd icu/icu4c/source/data/zone
 $ egrep "sg\{" *|cut -d\" -f2 |wc
     332     333    1719
+$ egrep "sg\{" *|cut -d\" -f2 | gzip -f |wc -c
+311
 $ egrep "lg\{" *|cut -d\" -f2 |wc 
   10047   24026  278103 
+$ egrep "lg\{" *|cut -d\" -f2 | gzip -f |wc -c
+69526
 $ egrep "gmt.*Format\{" *|cut -d\" -f2 |wc
     263     284    1826
+$ egrep "gmt.*Format\{" *|cut -d\" -f2 | gzip -f |wc -c
+392
 ```
 
 ### Output from V8 prototype of the updated proposal
@@ -99,7 +105,7 @@ Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/
 | longOffset  | ZZZZ | GMT-0800 |  |
 | shortWall  | v | PT |  |
 | longWall | vvvv | Pacific Time |  |
-| location | VVV |	Los Angeles | Require a lot of extra data (need 664K of extra data) |
+| location | VVV |	Los Angeles | Require a lot of extra data (need 664K of extra data [196K compressed] ) |
 | longLocation | VVVV | Los Angeles TIme | Require a lot of extra data (same as above)|
 | locode | V | uslax |  Frank oppose to support this|
 | id | VV	| America/Los_Angeles | Frank oppose to support this |
@@ -109,6 +115,9 @@ How to estimate the required data:
 $ cd icu/icu4c/source/data/zone
 $ egrep "ec\{" *|cut -d\" -f2 |wc
   45924   53835  664784
+$ egrep "ec\{" *|cut -d\" -f2 | gzip -f |wc -c
+196639
+
 ```
 
 ### Output from V8 prototype of the strawman proposal
