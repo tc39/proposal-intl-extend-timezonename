@@ -45,7 +45,28 @@ $ egrep "lg\{" *|cut -d\" -f2 |wc
   10047   24026  278103 
 ```
 
-### Output from V8 prototype
+
+
+
+## Copy from https://github.com/tc39/ecma402/issues
+Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
+| timeZoneName | CLDR pattern | Examples | Note |
+| --- | --- |--- | --- |
+| short | z | PST  | Supported by ECMA402 already |
+| long | zzzz | Pacific Standard Time  | Supported by ECMA402 already |
+| offset | Z | -0800  | Frank think this is for toISOString not good for Intl.DateTimeFormat |
+| longOffset  | ZZZZ | GMT-0800 |  |
+| shortWall  | v | PT |  |
+| longWall | vvvv | Pacific Time |  |
+| location | VVV |	Los Angeles | Require a lot of extra data |
+| longLocation | VVVV | Los Angeles TIme | Require a lot of extra data |
+| locode | V | uslax |  Frank oppose to support this|
+| id | VV	| America/Los_Angeles | Frank oppose to support this |
+
+### Output from V8 prototype of the strawman proposal
+v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328/1
+
+Notice it is under the data filtered out data for location and longLocation so the prototype does not show localized values but English only for location and longLocation:
 ```
 $ out/x64.release/d8 --harmony_intl_more_timezone
 V8 version 8.7.0 (candidate)
@@ -100,23 +121,6 @@ d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTi
 오후 5:41:31 Los Angeles 시간
 undefined
 ```
-v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328
-
-
-## Copy from https://github.com/tc39/ecma402/issues
-Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
-| timeZoneName | CLDR pattern | Examples | Note |
-| --- | --- |--- | --- |
-| short | z | PST  | Supported by ECMA402 already |
-| long | zzzz | Pacific Standard Time  | Supported by ECMA402 already |
-| offset | Z | -0800  | Frank think this is for toISOString not good for Intl.DateTimeFormat |
-| longOffset  | ZZZZ | GMT-0800 |  |
-| shortWall  | v | PT |  |
-| longWall | vvvv | Pacific Time |  |
-| location | VVV |	Los Angeles | Require a lot of extra data |
-| longLocation | VVVV | Los Angeles TIme | Require a lot of extra data |
-| locode | V | uslax |  Frank oppose to support this|
-| id | VV	| America/Los_Angeles | Frank oppose to support this |
 
 ## To be deleted ...
   3.  ["How to write a good explainer"][explainer] explains how to make a good first impression.
