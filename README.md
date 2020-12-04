@@ -43,6 +43,46 @@ $ egrep "lg\{" *|cut -d\" -f2 |wc
   10047   24026  278103 
 ```
 
+### Output from V8 prototype of the updated proposal
+```
+$ out/x64.release/d8 --harmony_intl_more_timezone
+V8 version 8.9.0 (candidate)
+d8> let timeZoneNames = ["short", "long", "shortGMT", "longGMT", "shortWall", "longWall"];
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("en", {timeZoneName}))});
+9:27:14 AM PST
+9:27:14 AM Pacific Standard Time
+9:27:14 AM GMT-8
+9:27:14 AM GMT-08:00
+9:27:14 AM PT
+9:27:14 AM Pacific Time
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("zh-Hant", {timeZoneName}))});
+上午9:27:27 [PST]
+上午9:27:27 [太平洋標準時間]
+上午9:27:27 [GMT-8]
+上午9:27:27 [GMT-08:00]
+上午9:27:27 [PT]
+上午9:27:27 [太平洋時間]
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("fr", {timeZoneName}))});
+9:27:47 UTC−8
+9:27:47 heure normale du Pacifique nord-américain
+09:27:47 UTC−8
+09:27:47 UTC−08:00
+09:27:47 heure : Los Angeles
+09:27:47 heure du Pacifique nord-américain
+undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("ko", {timeZoneName}))});
+오전 9시 28분 23초 GMT-8
+오전 9시 28분 23초 북미 태평양 표준시
+오전 9시 28분 23초 GMT-8
+오전 9:28:23 GMT-08:00
+오전 9:28:23 Los Angeles 시간
+오전 9:28:23 북미 태평양 시간
+undefined
+
+```
 
 
 
