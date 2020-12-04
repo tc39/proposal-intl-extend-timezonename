@@ -31,8 +31,8 @@ Updated Proposal - add 4 new formats
 | --- | --- |--- | --- | --- |
 | shortGMT | O | GMT-8  | The short localized GMT format. |  |
 | longGMT  | OOOO | GMT-0800 | The long localized GMT format. |  |
-| shortWall  | v | PT | The short generic non-location format. |. |
-| longWall | vvvv | Pacific Time | The long generic non-location format. |. |
+| shortWall  | v | PT | The short generic non-location format. | zone/*/meta:*/sg |
+| longWall | vvvv | Pacific Time | The long generic non-location format. | zone/*/meta:*/sg |
 
 ### Output from V8 prototype
 ```
