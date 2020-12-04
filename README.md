@@ -27,12 +27,23 @@ Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-da
 ## 
 
 Updated Proposal - add 4 new formats
-| timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key |
-| --- | --- |--- | --- | --- |
-| shortGMT | O | GMT-8  | The short localized GMT format. |  |
-| longGMT  | OOOO | GMT-0800 | The long localized GMT format. |  |
-| shortWall  | v | PT | The short generic non-location format. | zone/\*/meta:\*/sg |
-| longWall | vvvv | Pacific Time | The long generic non-location format. | zone/\*/meta:\*/lg |
+| timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key | Total # of items in 476 locales| Total bytes in UTF8 |
+| --- | --- |--- | --- | --- | --- | --- |
+| shortGMT | O | GMT-8  | The short localized GMT format. |  |  |
+| longGMT  | OOOO | GMT-0800 | The long localized GMT format. |  |. |
+| shortWall  | v | PT | The short generic non-location format. | zone/\*/meta:\*/sg | 332  | 1719  |
+| longWall | vvvv | Pacific Time | The long generic non-location format. | zone/\*/meta:\*/lg | 10047 | 278103 | 
+
+Note:
+Here is how I get the above number
+
+```
+$ cd icu/icu4c/source/data/zone
+$ egrep "sg\{" *|cut -d\" -f2 |wc
+    332     333    1719
+$ egrep "lg\{" *|cut -d\" -f2 |wc 
+  10047   24026  278103 
+```
 
 ### Output from V8 prototype
 ```
