@@ -61,7 +61,7 @@
         <tr>
           <td>[[TimeZoneName]]</td>
           <td>*"timeZoneName"*</td>
-          <td>*"short"*, *"long"*<ins>, *"offset"*, *"longOffset"*, *"shortWall"*, *"longWall"*, *"location"*, *"longLocation"*</ins></td>
+          <td>*"short"*, *"long"*<ins>, *"shortGMT"*, *"longGMT"*, *"shortWall"*, *"longWall"*</ins></td>
         </tr>
       </table>
     </emu-table>
@@ -91,7 +91,7 @@
             1. If _optionsProp_ is *undefined* and _formatProp_ is not *undefined*, then decrease _score_ by _additionPenalty_.
             1. Else if _optionsProp_ is not *undefined* and _formatProp_ is *undefined*, then decrease _score_ by _removalPenalty_.
             1. Else if _optionsProp_ ≠ _formatProp_, then
-              1. <ins>TODO(ftang) addresss *"offset"*, *"longOffset"*, *"shortWall"*, *"longWall"*, *"location"*, *"longLocation"* here.</ins>
+              1. <ins>TODO(ftang) addresss *"shortGMT"*, *"longGMT"*, *"shortWall"*, *"longWall"* here.</ins>
               1. Let _values_ be &laquo; *"2-digit"*, *"numeric"*, *"narrow"*, *"short"*, *"long"* &raquo;.
               1. Let _optionsPropIndex_ be the index of _optionsProp_ within _values_.
               1. Let _formatPropIndex_ be the index of _formatProp_ within _values_.
@@ -148,7 +148,7 @@
               1. Let _fv_ be FormatNumeric(_nf2_, _v_).
               1. If the *"length"* property of _fv_ is greater than 2, let _fv_ be the substring of _fv_ containing the last two characters.
             1. Else if _f_ is *"narrow"*, *"short"*, or *"long"*, then let _fv_ be a String value representing _f_ in the desired form; the String value depends upon the implementation and the effective locale and calendar of _dateTimeFormat_. If _p_ is *"month"*, then the String value may also depend on whether _dateTimeFormat_ has a [[Day]] internal slot. If _p_ is *"timeZoneName"*, then the String value may also depend on the value of the [[InDST]] field of _tm_. If _p_ is *"era"*, then the String value may also depend on whether _dateTimeFormat_ has a [[Era]] internal slot and if the implementation does not have a localized representation of _f_, then use _f_ itself.
-            1. <ins>Else if _f_ is *"offset"*, *"longOffset"*, *"shortWall"*, *"longWall"*, *"location"*, or *"longLocation"* then let _fv_ be a String value representing _f_ in the desired form. The String value may also depend on the value of the [[InDST]] field of _tm_.</ins>
+            1. <ins>Else if _f_ is *"shortGMT"*, *"longGMT"*, *"shortWall"*, *"longWall"* then let _fv_ be a String value representing _f_ in the desired form. The String value may also depend on the value of the [[InDST]] field of _tm_.</ins>
             1. Append a new Record { [[Type]]: _p_, [[Value]]: _fv_ } as the last element of the list _result_.
           1. Else if _p_ is equal to *"ampm"*, then
             1. Let _v_ be _tm_.[[Hour]].
