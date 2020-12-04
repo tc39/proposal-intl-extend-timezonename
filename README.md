@@ -24,9 +24,7 @@ Stage 0
 Prior Discussion: [ECMA402#119 DateTimeFormat: consider adding more timezone display options](https://github.com/tc39/ecma402/issues/119)
  
 Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names)
-## 
-
-Updated Proposal - add 4 new formats
+##  Updated Proposal - add 4 new formats only
 | timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key | Total # of items in 476 locales| Total bytes in UTF8 |
 | --- | --- |--- | --- | --- | --- | --- |
 | shortGMT | O | GMT-8  | The short localized GMT format. |  |  |
