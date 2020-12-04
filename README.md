@@ -98,10 +98,17 @@ Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/
 | longOffset  | ZZZZ | GMT-0800 |  |
 | shortWall  | v | PT |  |
 | longWall | vvvv | Pacific Time |  |
-| location | VVV |	Los Angeles | Require a lot of extra data |
-| longLocation | VVVV | Los Angeles TIme | Require a lot of extra data |
+| location | VVV |	Los Angeles | Require a lot of extra data (need 664K of extra data) |
+| longLocation | VVVV | Los Angeles TIme | Require a lot of extra data (same as above)|
 | locode | V | uslax |  Frank oppose to support this|
 | id | VV	| America/Los_Angeles | Frank oppose to support this |
+
+How to estimate the required data:
+```
+$ cd icu/icu4c/source/data/zone
+$ egrep "ec\{" *|cut -d\" -f2 |wc
+  45924   53835  664784
+```
 
 ### Output from V8 prototype of the strawman proposal
 v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328/1
@@ -161,6 +168,7 @@ d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTi
 오후 5:41:31 Los Angeles 시간
 undefined
 ```
+
 
 ## To be deleted ...
   3.  ["How to write a good explainer"][explainer] explains how to make a good first impression.
