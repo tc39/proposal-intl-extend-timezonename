@@ -26,19 +26,13 @@ Prior Discussion: [ECMA402#119 DateTimeFormat: consider adding more timezone dis
 Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names)
 ## 
 
-Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
-| timeZoneName | CLDR pattern | Examples | Note |
-| --- | --- |--- | --- |
-| short | z | PST  | Supported by ECMA402 already |
-| long | zzzz | Pacific Standard Time  | Supported by ECMA402 already |
-| offset | Z | -0800  |   |
-| longOffset  | ZZZZ | GMT-0800 |  |
-| shortWall  | v | PT |  |
-| longWall | vvvv | Pacific Time |  |
-| location | VVV |	Los Angeles |  |
-| longLocation | VVVV | Los Angeles TIme |  |
-| locode | V | uslax |  Frank oppose to support this|
-| id | VV	| America/Los_Angeles | Frank oppose to support this |
+Updated Proposal - add 4 new formats
+| timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key |
+| --- | --- |--- | --- | --- |
+| shortGMT | O | GMT-8  | The short localized GMT format. |  |
+| longGMT  | OOOO | GMT-0800 | The long localized GMT format. |  |
+| shortWall  | v | PT | The short generic non-location format. |. |
+| longWall | vvvv | Pacific Time | The long generic non-location format. |. |
 
 ### Output from V8 prototype
 ```
@@ -98,6 +92,20 @@ undefined
 v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328
 
 
+## Copy from https://github.com/tc39/ecma402/issues
+Straw Proposal: ([Proposed by @srl295  on Sep 22, 2020](https://github.com/tc39/ecma402/issues/119#issuecomment-696887550))
+| timeZoneName | CLDR pattern | Examples | Note |
+| --- | --- |--- | --- |
+| short | z | PST  | Supported by ECMA402 already |
+| long | zzzz | Pacific Standard Time  | Supported by ECMA402 already |
+| offset | Z | -0800  | Frank think this is for toISOString not good for Intl.DateTimeFormat |
+| longOffset  | ZZZZ | GMT-0800 |  |
+| shortWall  | v | PT |  |
+| longWall | vvvv | Pacific Time |  |
+| location | VVV |	Los Angeles | Require a lot of extra data |
+| longLocation | VVVV | Los Angeles TIme | Require a lot of extra data |
+| locode | V | uslax |  Frank oppose to support this|
+| id | VV	| America/Los_Angeles | Frank oppose to support this |
 
 ## To be deleted ...
   3.  ["How to write a good explainer"][explainer] explains how to make a good first impression.
