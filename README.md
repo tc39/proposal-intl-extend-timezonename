@@ -9,9 +9,10 @@
       ```
 -->
 ## Stage 
-Stage 0
+Stage 1
 
 * Plan to propose to advance to Stage 1 in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
+  * Advanced to Stage 1
 
 
 ## Champion
