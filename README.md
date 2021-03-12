@@ -58,47 +58,49 @@ v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328
 $ out/x64.release/d8 --harmony_intl_more_timezone
 V8 version 8.9.0 (candidate)
 d8> let timeZoneNames = ["short", "long", "shortGMT", "longGMT", "shortWall", "longWall"];
-undefined
-d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("en", {timeZoneName}))});
-9:27:14 AM PST
-9:27:14 AM Pacific Standard Time
-9:27:14 AM GMT-8
-9:27:14 AM GMT-08:00
-9:27:14 AM PT
-9:27:14 AM Pacific Time
-undefined
-d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("zh-Hant", {timeZoneName}))});
-上午9:27:27 [PST]
-上午9:27:27 [太平洋標準時間]
-上午9:27:27 [GMT-8]
-上午9:27:27 [GMT-08:00]
-上午9:27:27 [PT]
-上午9:27:27 [太平洋時間]
-undefined
-d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("fr", {timeZoneName}))});
-9:27:47 UTC−8
-9:27:47 heure normale du Pacifique nord-américain
-09:27:47 UTC−8
-09:27:47 UTC−08:00
-09:27:47 heure : Los Angeles
-09:27:47 heure du Pacifique nord-américain
-undefined
-d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("ko", {timeZoneName}))});
-오전 9시 28분 23초 GMT-8
-오전 9시 28분 23초 북미 태평양 표준시
-오전 9시 28분 23초 GMT-8
-오전 9:28:23 GMT-08:00
-오전 9:28:23 Los Angeles 시간
-오전 9:28:23 북미 태평양 시간
-undefined
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName}))});
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName}))});
+short: 12:27:10 PM PST
+long: 12:27:10 PM Pacific Standard Time
+shortGMT: 12:27:10 PM GMT-8
+longGMT: 12:27:10 PM GMT-08:00
+shortWall: 12:27:10 PM PT
+longWall: 12:27:10 PM Pacific Time
 
-d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("en", {timeZoneName, timeZone: "Asia/Calcutta"}))});
-1:50:34 AM GMT+5:30
-1:50:34 AM India Standard Time
-1:50:34 AM GMT+5:30
-1:50:34 AM GMT+05:30
-1:50:34 AM India Time
-1:50:34 AM India Standard Time
+
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("zh-Hant", {timeZoneName}))});
+short: 下午12:26:20 [PST]
+long: 下午12:26:20 [太平洋標準時間]
+shortGMT: 下午12:26:20 [GMT-8]
+longGMT: 下午12:26:20 [GMT-08:00]
+shortWall: 下午12:26:20 [PT]
+longWall: 下午12:26:20 [太平洋時間]
+
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("fr", {timeZoneName}))});
+short: 12:25:48 UTC−8
+long: 12:25:48 heure normale du Pacifique nord-américain
+shortGMT: 12:25:48 UTC−8
+longGMT: 12:25:48 UTC−08:00
+shortWall: 12:25:48 heure : Los Angeles
+longWall: 12:25:48 heure du Pacifique nord-américain
+
+
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("ko", {timeZoneName}))});
+short: 오후 12시 23분 41초 GMT-8
+long: 오후 12시 23분 41초 북미 태평양 표준시
+shortGMT: 오후 12시 23분 41초 GMT-8
+longGMT: 오후 12:23:41 GMT-08:00
+shortWall: 오후 12:23:41 Los Angeles 시간
+longWall: 오후 12:23:41 북미 태평양 시간
+
+d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName, timeZone: "Asia/Calcutta"}))});
+short: 1:54:56 AM GMT+5:30
+long: 1:54:56 AM India Standard Time
+shortGMT: 1:54:56 AM GMT+5:30
+longGMT: 1:54:56 AM GMT+05:30
+shortWall: 1:54:56 AM India Time
+longWall: 1:54:56 AM India Standard Time
+
 
 
 ```
