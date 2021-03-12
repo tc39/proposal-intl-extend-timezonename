@@ -92,6 +92,15 @@ d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTi
 오전 9:28:23 북미 태평양 시간
 undefined
 
+d8> timeZoneNames.forEach(function(timeZoneName) { print((new Date()).toLocaleTimeString("en", {timeZoneName, timeZone: "Asia/Calcutta"}))});
+1:50:34 AM GMT+5:30
+1:50:34 AM India Standard Time
+1:50:34 AM GMT+5:30
+1:50:34 AM GMT+05:30
+1:50:34 AM India Time
+1:50:34 AM India Standard Time
+
+
 ```
 See ~possible options removed due to size concern~ in [archived README.md](https://github.com/tc39-transfer/proposal-intl-extend-timezonename/blob/main/README-old.md)
 
