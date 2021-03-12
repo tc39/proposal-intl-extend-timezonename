@@ -100,7 +100,7 @@ See ~possible options removed due to size concern~ in [archived README.md](https
 ### Entrance Criteria For Stage 2
 * Initial spec text  https://tc39.es/proposal-intl-extend-timezonename/ DONE
 * All Entrance Criteria for State 1 DONE
-* Acceptance Signifies: “The committee expects the feature to be developed and eventually included in the standard”
+* **Acceptance Signifies:** “The committee expects the feature to be developed and eventually included in the standard”
 
 ### Entrance Criteria For Stage 1
 * Identified “champion” who will advance the addition: DONE- @FrankYFTang
@@ -110,4 +110,4 @@ See ~possible options removed due to size concern~ in [archived README.md](https
 * Discussion of key algorithms, abstractions and semantics DONE
 * Identification of potential “cross-cutting” concerns and implementation challenges/complexity DONE
 * A publicly available repository for the proposal that captures the above requirements: DONE  https://github.com/tc39/proposal-intl-extend-timezonename/ 
-* Acceptance Signifies: “The committee expects to devote time to examining the problem space, solutions and cross-cutting concerns”
+* **Acceptance Signifies:** “The committee expects to devote time to examining the problem space, solutions and cross-cutting concerns”
