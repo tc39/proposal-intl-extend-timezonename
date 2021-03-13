@@ -53,8 +53,8 @@ $ egrep "gmt.*Format\{" *|cut -d\" -f2 | gzip -f |wc -c
 ```
 
 ### Output from V8 prototype of the updated proposal
-v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2425328
-```
+v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2757899
+
 $ out/x64.release/d8 --harmony_intl_more_timezone
 V8 version 8.9.0 (candidate)
 d8> let timeZoneNames = ["short", "long", "shortGMT", "longGMT", "shortWall", "longWall"];
