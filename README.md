@@ -55,6 +55,7 @@ $ egrep "gmt.*Format\{" *|cut -d\" -f2 | gzip -f |wc -c
 ### Output from V8 prototype of the updated proposal
 v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2757899
 
+```
 $ out/x64.release/d8 --harmony_intl_more_timezone
 V8 version 8.9.0 (candidate)
 d8> let timeZoneNames = ["short", "long", "shortGMT", "longGMT", "shortWall", "longWall"];
@@ -100,8 +101,6 @@ shortGMT: 1:54:56 AM GMT+5:30
 longGMT: 1:54:56 AM GMT+05:30
 shortWall: 1:54:56 AM India Time
 longWall: 1:54:56 AM India Standard Time
-
-
 
 ```
 See ~possible options removed due to size concern~ in [archived README.md](https://github.com/tc39-transfer/proposal-intl-extend-timezonename/blob/main/README-old.md)
