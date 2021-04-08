@@ -28,8 +28,8 @@ Ref: [UTS35 - "7 Using Time Zone Names"](http://unicode.org/reports/tr35/tr35-da
 ##  Updated Proposal - add 4 new formats only
 | timeZoneName | CLDR pattern | Examples | Description in UTS35 | ICU key | Total # of items in 476 locales| Total bytes in UTF8 | Compressed Size |
 | --- | --- |--- | --- | --- | --- | --- | --- |
-| shortGMT | O | GMT-8  | The short localized GMT format. | zone/\*/zoneStrings/gmt\.\*Format | 263 | 1826 | 392 |
-| longGMT  | OOOO | GMT-0800 | The long localized GMT format. | (same as above) | (no extra from above) | (no extra from above) | (no extra from above) |
+| shortOffset | O | GMT-8  | The short localized GMT format. | zone/\*/zoneStrings/gmt\.\*Format | 263 | 1826 | 392 |
+| longOffset  | OOOO | GMT-0800 | The long localized GMT format. | (same as above) | (no extra from above) | (no extra from above) | (no extra from above) |
 | shortWall  | v | PT | The short generic non-location format. | zone/\*/zoneStrings/meta:\*/sg | 332  | 1719  |  311 | 
 | longWall | vvvv | Pacific Time | The long generic non-location format. | zone/\*/zoneStrings/meta:\*/lg | 10047 | 278103 | 69526 |
 
@@ -58,13 +58,13 @@ v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2757899
 ```
 $ out/x64.release/d8 --harmony_intl_more_timezone
 V8 version 8.9.0 (candidate)
-d8> let timeZoneNames = ["short", "long", "shortGMT", "longGMT", "shortWall", "longWall"];
+d8> let timeZoneNames = ["short", "long", "shortOffset", "longOffset", "shortWall", "longWall"];
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName}))});
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName}))});
 short: 12:27:10 PM PST
 long: 12:27:10 PM Pacific Standard Time
-shortGMT: 12:27:10 PM GMT-8
-longGMT: 12:27:10 PM GMT-08:00
+shortOffset: 12:27:10 PM GMT-8
+longOffset: 12:27:10 PM GMT-08:00
 shortWall: 12:27:10 PM PT
 longWall: 12:27:10 PM Pacific Time
 
@@ -72,16 +72,16 @@ longWall: 12:27:10 PM Pacific Time
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("zh-Hant", {timeZoneName}))});
 short: 下午12:26:20 [PST]
 long: 下午12:26:20 [太平洋標準時間]
-shortGMT: 下午12:26:20 [GMT-8]
-longGMT: 下午12:26:20 [GMT-08:00]
+shortOffset: 下午12:26:20 [GMT-8]
+longOffset: 下午12:26:20 [GMT-08:00]
 shortWall: 下午12:26:20 [PT]
 longWall: 下午12:26:20 [太平洋時間]
 
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("fr", {timeZoneName}))});
 short: 12:25:48 UTC−8
 long: 12:25:48 heure normale du Pacifique nord-américain
-shortGMT: 12:25:48 UTC−8
-longGMT: 12:25:48 UTC−08:00
+shortOffset: 12:25:48 UTC−8
+longOffset: 12:25:48 UTC−08:00
 shortWall: 12:25:48 heure : Los Angeles
 longWall: 12:25:48 heure du Pacifique nord-américain
 
@@ -89,16 +89,16 @@ longWall: 12:25:48 heure du Pacifique nord-américain
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("ko", {timeZoneName}))});
 short: 오후 12시 23분 41초 GMT-8
 long: 오후 12시 23분 41초 북미 태평양 표준시
-shortGMT: 오후 12시 23분 41초 GMT-8
-longGMT: 오후 12:23:41 GMT-08:00
+shortOffset: 오후 12시 23분 41초 GMT-8
+longOffset: 오후 12:23:41 GMT-08:00
 shortWall: 오후 12:23:41 Los Angeles 시간
 longWall: 오후 12:23:41 북미 태평양 시간
 
 d8> timeZoneNames.forEach(function(timeZoneName) { print(timeZoneName + ": " + (new Date()).toLocaleTimeString("en", {timeZoneName, timeZone: "Asia/Calcutta"}))});
 short: 1:54:56 AM GMT+5:30
 long: 1:54:56 AM India Standard Time
-shortGMT: 1:54:56 AM GMT+5:30
-longGMT: 1:54:56 AM GMT+05:30
+shortOffset: 1:54:56 AM GMT+5:30
+longOffset: 1:54:56 AM GMT+05:30
 shortWall: 1:54:56 AM India Time
 longWall: 1:54:56 AM India Standard Time
 
