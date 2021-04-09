@@ -1,5 +1,7 @@
 # Extend TimeZoneName Option Proposal
 
+![Stage 3](https://badges.aleen42.com/src/tc39_4.svg)
+
 <!--
  
   1.  Add a post-rewrite git hook to auto-rebuild the output on every commit:
