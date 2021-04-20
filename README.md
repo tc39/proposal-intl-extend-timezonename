@@ -9,12 +9,13 @@
       ```
 -->
 ## Stage 
-Stage 1
+Stage 2
 
 * Advanced to [Stage 1](https://docs.google.com/presentation/d/1G8XTK4tjzXxJAs6GpZvrd6SjxL40h_fgrEq9CN6jDPw/edit#slide=id.p) in [TC39 2021-01-25~28 meeting](https://github.com/tc39/agendas/blob/master/2021/01.md).
 * 2021-04-08 ECMA402 meeting agree to proceed to TC39 for Stage 2
   * Rename (short|long)GMT to (short|long)Offset 
-* Plan to propose to advance to [Stage 2](https://docs.google.com/presentation/d/1eYuygaDvErbftDjg4S6zCYqhaxpEiCyFDDdpjmPaMyo/) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
+*  Advanced to [Stage 2](https://docs.google.com/presentation/d/1eYuygaDvErbftDjg4S6zCYqhaxpEiCyFDDdpjmPaMyo/) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
+  * Philip Chimento and Rick Button (assisted by Ujjwal) signed up to be Stage 3 reviewers
 
 
 ## Champion
