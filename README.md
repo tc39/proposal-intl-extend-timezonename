@@ -22,8 +22,8 @@ Stage 2
 * Frank Tang @FrankYFTang
 
 ## Stage 3 reviewers (needed during stage 2)
-* TBD
-* TBD
+* Philip Chimento @ptomato
+* Rick Button @rickbutton 
 
 ## Editor
 * TBD
