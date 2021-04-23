@@ -16,6 +16,7 @@ Stage 2
   * Rename (short|long)GMT to (short|long)Offset 
 *  Advanced to [Stage 2](https://docs.google.com/presentation/d/1eYuygaDvErbftDjg4S6zCYqhaxpEiCyFDDdpjmPaMyo/) in [TC39 2021-04 meeting](https://github.com/tc39/agendas/blob/master/2021/04.md).
   * Philip Chimento and Rick Button (assisted by Ujjwal) signed up to be Stage 3 reviewers
+  * Plan to propose to TC39 2021 May meeting for Stage 3 Advancement.
 
 
 ## Champion
