@@ -6,6 +6,11 @@
       "id": "sec-requireinternalslot"
     },
     {
+      "type": "op",
+      "aoid": "OrdinaryObjectCreate",
+      "id": "sec-ordinaryobjectcreate"
+    },
+    {
       "type": "term",
       "term": "string-concatenation",
       "refId": "sec-ecmascript-language-types-string-type",
@@ -18,6 +23,16 @@
       "term": "legacy-constructor",
       "refId": "sec-constructor-properties-of-the-intl-object",
       "id": "legacy-constructor"
+    },
+    {
+      "type": "op",
+      "aoid": "FormatNumeric",
+      "id": "sec-formatnumber"
+    },
+    {
+      "type": "op",
+      "aoid": "ToLocalTime",
+      "id": "sec-tolocaltime"
     },
     {
       "type": "clause",
