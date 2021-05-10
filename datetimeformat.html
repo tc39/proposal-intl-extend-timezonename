@@ -152,7 +152,7 @@
             1. Let _fv_ be a String value representing the day period of _tm_ in the form given by _f_; the String value depends upon the implementation and the effective locale of _dateTimeFormat_.
             1. Append a new Record { [[Type]]: _p_, [[Value]]: _fv_ } as the last element of the list _result_.
           1. <ins>Else if _p_ is equal to *"timeZoneName"*, then</ins>
-            1. <ins>Let _f_ be _dateTimeFormat_[[TimeZoneName]].</ins>
+            1. <ins>Let _f_ be _dateTimeFormat_.[[TimeZoneName]].</ins>
             1. <ins>Let _v_ be _dateTimeFormat_[[TimeZone]].</ins>
             1. <ins>Let _fv_ be a String value representing _v_ in the form given by _f_; the String value depends upon the implementation and the effective locale of _dateTimeFormat_. The String value may also depend on the value of the [[InDST]] field of _tm_ if _f_ is *"short"*, *"long"*, *"shortOffset"*, or *"longOffset"*.  If the implementation does not have a localized representation of _f_, then use the String value of _v_ itself.</ins>
             1. <ins>Append a new Record { [[Type]]: _p_, [[Value]]: _fv_ } as the last element of the list _result_.</ins>
