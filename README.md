@@ -63,6 +63,9 @@ $ egrep "gmt.*Format\{" *|cut -d\" -f2 |wc
 $ egrep "gmt.*Format\{" *|cut -d\" -f2 | gzip -f |wc -c
 392
 ```
+## Tracking
+* [Mozilla Tracking Bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1710429)
+* [V8 Tracking Bug](https://bugs.chromium.org/p/v8/issues/detail?id=11661)
 
 ### Output from V8 prototype of the updated proposal
 v8 prototype: https://chromium-review.googlesource.com/c/v8/v8/+/2757899
