@@ -18,6 +18,7 @@ Stage 3
   * Philip Chimento and Rick Button (assisted by Ujjwal) signed up to be Stage 3 reviewers
 *  Advanced to [Stage 3](https://docs.google.com/presentation/d/1N4QoCxFVM4ZKr9gDnaDDnrHb-5_rPTy-wydp-f90xBM) in [TC39 2021-05 meeting](https://github.com/tc39/agendas/blob/master/2021/05.md).
 *  Update during  [Stage 3](https://docs.google.com/presentation/d/1a4cp-Jw_k47iv3oHFDC2rhkNPHbZbTzrZOSVR_4_QlM/edit#slide=id.p) in [TC39 2021-07 meeting](https://github.com/tc39/agendas/blob/master/2021/07.md)
+*  Slide for [Stage 4 Advancement for TC39 2021-Dec meeting](https://docs.google.com/presentation/d/1VGz9AlDRqITk3MiKmacgibMSBCo8qN3LZs4BeqNDQsI/) 
 
 
 
